@@ -1,0 +1,30 @@
+/*========================= start default css classes =====================================*/
+/*class for footer*/
+.highcharts-footer {
+	fill: #742e91;
+    stroke: #742e91;
+    stroke-width: 1,
+}
+/*class for diamond on selected bar*/
+.highcharts-diamond {
+	fill: #ffffff;
+  	stroke: #ffffff;
+  	stroke-width: 1;
+}
+/*class for x axis right legend arrow*/
+.highchart-x-legend-arrow-right,
+/*class for x axis left legend arrow*/
+.highchart-x-legend-arrow-left {
+	stroke: #ba94c7;
+    fill: #ba94c7;
+}
+/*class for x axis right legend text*/
+.highchart-x-legend-text-right,
+/*class for x axis left legend text*/
+.highchart-x-legend-text-left {
+	stroke: #ba94c7;
+    fill: #ba94c7;
+    font-size: 14px;
+}
+/*========================= finish default css classes =====================================*/
+

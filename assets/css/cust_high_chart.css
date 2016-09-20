@@ -1,0 +1,55 @@
+/*========================= start coumpulsary css classes =====================================*/
+.highcharts-xaxis-labels text {
+  	font-size: 22px !important;
+    transform: rotate(0) !important;
+    fill: #fff !important;
+}
+
+.highcharts-yaxis-labels text {
+	fill: #43a1bb !important;
+}
+
+.highcharts-series rect {
+	fill: #cccccc;
+    stroke-width: 2;
+    stroke: #b6b7b9;
+}
+
+@media screen and (max-width: 400px) {
+  .highcharts-xaxis-labels tspan {
+    font-size: 18px !important;
+  }
+}
+/*========================= finish coumpulsary css classes =====================================*/
+
+
+/*========================= start default css classes =====================================*/
+/*class for footer*/
+.footer {
+	fill: #e91e63;
+  stroke: #e91e63;
+  stroke-width: 1,
+}
+/*class for diamond on selected bar*/
+.diamond {
+	fill: #4f29b4;
+  stroke: #ffffff;
+  stroke-width: 1;
+}
+/*class for x axis right legend arrow*/
+.x-legend-arrow-right,
+/*class for x axis left legend arrow*/
+.x-legend-arrow-left {
+	stroke: #ffffff;
+    fill: #4f29b4;
+}
+/*class for x axis right legend text*/
+.x-legend-text-right,
+/*class for x axis left legend text*/
+.x-legend-text-left {
+	stroke: #4f29b4;
+    fill: #4f29b4;
+    font-size: 14px;
+}
+/*========================= finish default css classes =====================================*/
+

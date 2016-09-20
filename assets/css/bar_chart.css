@@ -1,0 +1,51 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: none;
+  shape-rendering: crispEdges;
+}
+
+.x.axis {
+  font-size: 22px;
+  fill: #ffffff;
+}
+
+.y.axis {
+  fill: #43a1bb;
+}
+
+.x.axis .arrow,
+.x.axis .x-label {
+  stroke: #ba94c7;
+  fill: #ba94c7;
+}
+
+.x.axis .x-label {
+  font-size: 16px;
+}
+
+.selected-background {
+  fill: #ba94c7;
+  stroke: #ba94c7;
+  opacity: 0.5;
+}
+
+.bar-average {
+  fill: #ba94c7;
+  stroke: #ba94c7;
+}
+
+.rect-back {
+  fill: blue;
+  opacity: 0.05;
+}
+
+.footer {
+  fill: #742e91;
+}
+
+@media screen and (max-width: 400px) {
+  .x.axis .x-label {
+    font-size: 12px;
+  }
+}
