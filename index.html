@@ -46,18 +46,18 @@
 
                         <li class="resultspage-Tab disabled" data-bind="visible:(!getVisibility() && !uiState.tabResult.enabled())">
                             <a  href="javascript:void(0)"> 
-                            <span>Results</span>
+                            <span>Complete Results</span>
                             </a>
                         </li>
 
                         <li class="resultspage-Tab disabled" data-bind="click:onResultTabClick,visible:(!uiState.tabResult.enabled() && getVisibility())">
                             <a href="#!/content/calculator/" data-open="dataError">
-                            <span>Results</span>
+                            <span>Complete Results</span>
                             </a>
                         </li>
                         <li class="resultspage-Tab" data-bind="visible:uiState.tabResult.enabled()">
                             <a href="#!/content/resultspage/" data-bind="click:onResultTabClick">
-                            <span>Results</span>
+                            <span>Complete Results</span>
                             </a>
                         </li>
 
@@ -134,17 +134,17 @@
     </div>
 </div>
 
-<div class="critical-screen " hidden>
+<div class="critical-screen hide" data-bind="css:{'hide':!uiState.showCriticalNotification()}">
     <div class="page with-group-sections">
         <div class="critical-inner">
             <div class="callout primary">
-                <h2><i class="fa fa-lock"> </i> Locked</h2>
+                <h2><i class="fa fa-lock"> </i> Locked</h2> 
             </div>
             <div class="page-wrapper">
                 <section class="section m-l-0 m-r-0 group-section">
                     <h1>The system has been locked </h1>
                     <p>This version of the application has been locked because of need to ugrade the science.  Please go to the store upgrade this application.</p>
-                    <a href="" class="button">Go to Store</a>
+                    <a href="" data-bind="attr:{'href':appStoreUri},css:{'hide':!uiState.showStoreButton()}" class="button hide">Go to Store</a>
                 </section>
             </div>
         </div>
@@ -222,7 +222,7 @@
                         <div class="question wildcard required"  data-bind="css:requires.month.status()">
                           <div class="label-holder">
                             <label for="">
-                              <span class="text">Time on DAPT in Month</span>
+                              <span class="text">Time on DAPT in Months</span>
                               <span class="required-holder highlighted">
                                 <i class="fa fa-holder-dynamic"></i>
                               </span>
@@ -253,7 +253,7 @@
                     </div>
 
                     <!-- Switch Buttons -->
-                    <div class="medium-12 columns">
+                    <div class="medium-12 columns toggle-buttons-area">
                         <div class="question">
                             <div class="label-holder row collapse">
                                 <label for="">
@@ -293,7 +293,7 @@
                     <div class="medium-12 columns">
                         <h2 class="with-underline highlighted">Procedure Characteristics</h2>
                     </div>
-                    <div class="medium-12 columns">
+                    <div class="medium-12 columns toggle-buttons-area">
                         <div class="question">
                             <div class="label-holder row collapse">
                                 <label for="">
@@ -339,7 +339,7 @@
 	<div class="page with-group-sections recommendation-page">
 		<div class="page-wrapper">
 			<div class="content-padding">
-				<h1>Results</h1>
+				<h1>Complete Results</h1>
 			</div>
 			
 
@@ -357,7 +357,7 @@
 								<thead>
 									<tr>
 										<th style="min-width:120px">Risk Type</th>
-										<th class="purple">D/C Therapy</th>
+										<th class="grey">D/C Therapy</th>
 										<th>Cont Therapy</th>
 										<th class="purple">Change in Risk</th>
 									</tr>
@@ -367,42 +367,42 @@
 										<td class="text">
 											Stent Thrombosis Myocardial Infraction
 										</td>
-										<td class="purple text-center" data-bind="text:percentageIschemicRisk.withoutTherapy()">
+										<td class="grey text-center" data-bind="text:percentageIschemicRisk.withoutTherapy()">
 											3.2%
 										</td>
 										<td class="text-center" data-bind="text:percentageIschemicRisk.withTherapy()">
 											4.4%
 										</td>
-										<td class="text-center"  data-bind="text:percentageIschemicRisk.mod(),css:{'green':!percentageIschemicRisk.isResultPositive(),'red':percentageIschemicRisk.isResultPositive()}">
-											+1.2%
+										<td class="text-center"  data-bind="css:{'green':!percentageIschemicRisk.isResultPositive(),'red':percentageIschemicRisk.isResultPositive()}">
+											<i class="fa up-or-down" data-bind="css:{' fa-arrow-down':!percentageIschemicRisk.isResultPositive(),' fa-arrow-up':percentageIschemicRisk.isResultPositive()}"></i><span data-bind="text:percentageIschemicRisk.mod()">1.2%</span>
 										</td>
 									</tr>
 									<tr>
 										<td class="text">
 											Death, MI or TE
 										</td>
-										<td class="purple text-center" data-bind="text:percentageDMRisk.withoutTherapy()">
+										<td class="grey text-center" data-bind="text:percentageDMRisk.withoutTherapy()">
 											3.2%
 										</td>
 										<td class="text-center" data-bind="text:percentageDMRisk.withTherapy()">
 											4.4%
 										</td>
-										<td class="text-center"  data-bind="text:percentageDMRisk.mod(),css:{'green':!percentageDMRisk.isResultPositive(),'red':percentageDMRisk.isResultPositive()}">
-											+1.2%
+										<td class="text-center"  data-bind="css:{'green':!percentageDMRisk.isResultPositive(),'red':percentageDMRisk.isResultPositive()}">
+											<i class="fa up-or-down" data-bind="css:{' fa-arrow-down':!percentageDMRisk.isResultPositive(),' fa-arrow-up':percentageDMRisk.isResultPositive()}"></i><span data-bind="text:percentageDMRisk.mod()">1.2%</span>
 										</td>
 									</tr>
 									<tr>
 										<td class="text">
 											GUSTO Mod-Severe Bleeding
 										</td>
-										<td class="purple text-center" data-bind="text:percentageGUSTORisk.withoutTherapy()">
+										<td class="grey text-center" data-bind="text:percentageGUSTORisk.withoutTherapy()">
 											3.2%
 										</td>
 										<td class="text-center" data-bind="text:percentageGUSTORisk.withTherapy()">
 											4.4%
 										</td>
-										<td class="text-center"  data-bind="text:percentageGUSTORisk.mod(),css:{'green':!percentageGUSTORisk.isResultPositive(),'red':percentageGUSTORisk.isResultPositive()}">
-											+1.2%
+										<td class="text-center"  data-bind="css:{'green':!percentageGUSTORisk.isResultPositive(),'red':percentageGUSTORisk.isResultPositive()}">
+											<i class="fa up-or-down" data-bind="css:{' fa-arrow-down':!percentageGUSTORisk.isResultPositive(),' fa-arrow-up':percentageGUSTORisk.isResultPositive()}"></i><span data-bind="text:percentageGUSTORisk.mod()">1.2%</span>
 										</td>
 									</tr>
 								</tbody>
